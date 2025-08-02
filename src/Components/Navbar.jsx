@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4">
-      <a className="navbar-brand text-white" href="#">MyProject</a>
+      <a className="navbar-brand text-white text-lg" href="#">AskPCTE</a>
 
       <button
         className="navbar-toggler"
@@ -20,17 +20,17 @@ function Navbar() {
 
       <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul className="navbar-nav">
-          <li className="nav-item">
-            <a className="nav-link text-white" href="#">Home</a>
+          <li className="nav-item mx-2">
+            <a className="nav-link text-white nav-link-underline" href="#">Login</a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link text-white" href="#">Features</a>
+          <li className="nav-item mx-2">
+            <a className="nav-link text-white nav-link-underline" href="#">Dashboard</a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link text-white" href="#">About</a>
+          <li className="nav-item mx-2">
+            <a className="nav-link text-white nav-link-underline" href="#">Createticket</a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link text-white" href="#">Contact</a>
+          <li className="nav-item mx-2">
+            <a className="nav-link text-white nav-link-underline" href="#">Ticketdetails</a>
           </li>
         </ul>
       </div>
