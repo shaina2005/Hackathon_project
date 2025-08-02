@@ -29,7 +29,7 @@ function Navbar() {
       >
         <ul className="navbar-nav">
           <li className="nav-item mx-2">
-            <a className="nav-link text-white nav-link-underline" href="#">
+            <a className="nav-link text-white nav-link-underline" href="">
               Login
             </a>
           </li>
