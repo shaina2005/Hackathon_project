@@ -49,23 +49,29 @@
 .login-card .btn:hover {
   background-color: #333;
 }
+/* Navbar.css */
+.navbar {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .nav-link-underline {
   position: relative;
-  display: inline-block;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .nav-link-underline::after {
   content: '';
   position: absolute;
-  width: 0%;
+  width: 0;
   height: 2px;
-  left: 0;
   bottom: 0;
+  left: 0;
   background-color: white;
-  transition: width 0.3s ease;
+  transition: width 0.3s;
 }
 
 .nav-link-underline:hover::after {
   width: 100%;
 }
+
