@@ -32,20 +32,19 @@
 }
 
 .ticket-form-wrapper {
-  background: rgba(255, 255, 255, 0.98);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
-  box-shadow: 
-    0 25px 50px rgba(0, 0, 0, 0.15),
-    0 0 0 1px rgba(0, 0, 0, 0.05) inset;
-  padding: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 60px 40px;
   width: 100%;
-  max-width: 650px;
+  max-width: 800px;
   transform: translateY(20px);
   opacity: 0;
   animation: slideInUp 0.8s ease-out 0.2s forwards;
   position: relative;
+  margin: 0;
 }
 
 @keyframes slideInUp {
@@ -56,28 +55,25 @@
 }
 
 .form-title {
-  color: #000000;
-  font-size: 32px;
+  color: #ffffff;
+  font-size: 36px;
   font-weight: 700;
-  margin: 0 0 12px 0;
+  margin: 0 0 16px 0;
   text-align: center;
-  background: linear-gradient(135deg, #000000, #333333);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   animation: titleGlow 2s ease-in-out infinite alternate;
 }
 
 @keyframes titleGlow {
-  from { filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3)); }
-  to { filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5)); }
+  from { filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3)); }
+  to { filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5)); }
 }
 
 .form-subtitle {
-  color: #666666;
-  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
   font-weight: 400;
-  margin: 0 0 40px 0;
+  margin: 0 0 50px 0;
   text-align: center;
   line-height: 1.6;
   opacity: 0;
@@ -91,13 +87,13 @@
 .ticket-form {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 32px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   opacity: 0;
   transform: translateX(-20px);
   animation: slideInLeft 0.6s ease-out forwards;
@@ -118,7 +114,7 @@
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: 32px;
 }
 
 .form-row .form-group {
@@ -129,12 +125,13 @@
 .form-row .form-group:last-child { animation-delay: 0.6s; }
 
 .form-label {
-  color: #333333;
-  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   position: relative;
   transition: color 0.3s ease;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .form-label::after {
@@ -144,12 +141,12 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #000000, #333333);
+  background: linear-gradient(90deg, #ffffff, rgba(255, 255, 255, 0.7));
   transition: width 0.3s ease;
 }
 
 .form-group:focus-within .form-label {
-  color: #000000;
+  color: #ffffff;
 }
 
 .form-group:focus-within .form-label::after {
@@ -159,49 +156,54 @@
 .form-input,
 .form-textarea,
 .form-select {
-  padding: 16px 20px;
-  border: 2px solid #e0e0e0;
+  padding: 18px 24px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 12px;
   font-size: 16px;
   font-weight: 400;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(255, 255, 255, 0.8);
-  color: #333333;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
   position: relative;
   backdrop-filter: blur(10px);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .form-input:hover,
 .form-textarea:hover,
 .form-select:hover {
-  border-color: #cccccc;
-  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.15);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .form-input:focus,
 .form-textarea:focus,
 .form-select:focus {
   outline: none;
-  border-color: #000000;
-  background: rgba(255, 255, 255, 1);
+  border-color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.2);
   box-shadow: 
-    0 0 0 4px rgba(0, 0, 0, 0.1),
-    0 8px 25px rgba(0, 0, 0, 0.15);
+    0 0 0 4px rgba(255, 255, 255, 0.1),
+    0 8px 25px rgba(0, 0, 0, 0.3);
   transform: translateY(-2px);
 }
 
 .form-textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 140px;
   font-family: inherit;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .form-select {
   cursor: pointer;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="%23000000"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>');
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="%23ffffff"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>');
   background-repeat: no-repeat;
   background-position: right 16px center;
   background-size: 16px;
@@ -211,8 +213,8 @@
 .form-input.error,
 .form-textarea.error,
 .form-select.error {
-  border-color: #666666;
-  background: rgba(102, 102, 102, 0.05);
+  border-color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
   animation: shake 0.5s ease-in-out;
 }
 
@@ -223,13 +225,14 @@
 }
 
 .error-message {
-  color: #666666;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 14px;
   font-weight: 500;
-  margin-top: 6px;
+  margin-top: 8px;
   opacity: 0;
   transform: translateY(-10px);
   animation: errorSlideIn 0.3s ease-out forwards;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes errorSlideIn {
@@ -240,21 +243,22 @@
 }
 
 .submit-button {
-  background: linear-gradient(135deg, #000000 0%, #333333 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
   color: white;
-  border: none;
-  padding: 18px 36px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 20px 40px;
   border-radius: 12px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  margin-top: 20px;
+  margin-top: 30px;
   position: relative;
   overflow: hidden;
   opacity: 0;
   transform: translateY(20px);
   animation: slideInUp 0.6s ease-out 0.8s forwards;
+  backdrop-filter: blur(10px);
 }
 
 .submit-button::before {
@@ -270,6 +274,8 @@
 
 .submit-button:hover {
   transform: translateY(-3px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.2) 100%);
+  border-color: rgba(255, 255, 255, 0.5);
   box-shadow: 
     0 12px 30px rgba(0, 0, 0, 0.4),
     0 0 0 1px rgba(255, 255, 255, 0.1) inset;
@@ -290,7 +296,7 @@
   transform: none;
 }
 
-/* Loading state hoga */
+/* Loading state */
 .submit-button.loading {
   pointer-events: none;
 }
@@ -313,12 +319,12 @@
   to { transform: rotate(360deg); }
 }
 
-/* Success animation ayegi */
+/* Success animation */
 .form-success {
   position: fixed;
   top: 20px;
   right: 20px;
-  background: linear-gradient(135deg, #333333, #000000);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
   color: white;
   padding: 16px 24px;
   border-radius: 12px;
@@ -326,6 +332,8 @@
   transform: translateX(400px);
   animation: slideInRight 0.5s ease-out forwards;
   z-index: 1000;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 @keyframes slideInRight {
@@ -372,53 +380,53 @@
   }
   
   .ticket-form-wrapper {
-    padding: 32px 24px;
-    border-radius: 16px;
+    padding: 40px 24px;
+    margin: 0;
   }
   
   .form-title {
-    font-size: 28px;
+    font-size: 32px;
   }
   
   .form-subtitle {
-    font-size: 15px;
+    font-size: 16px;
   }
   
   .form-row {
     grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .form-input,
-  .form-textarea,
-  .form-select {
-    padding: 14px 16px;
-    font-size: 16px;
-  }
-  
-  .submit-button {
-    padding: 16px 32px;
-  }
-}
-
-@media (max-width: 480px) {
-  .ticket-form-wrapper {
-    padding: 24px 20px;
-    margin: 10px;
-  }
-  
-  .form-title {
-    font-size: 24px;
-  }
-  
-  .ticket-form {
     gap: 24px;
   }
   
   .form-input,
   .form-textarea,
   .form-select {
-    padding: 12px 14px;
+    padding: 16px 20px;
+    font-size: 16px;
+  }
+  
+  .submit-button {
+    padding: 18px 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ticket-form-wrapper {
+    padding: 30px 20px;
+    margin: 0;
+  }
+  
+  .form-title {
+    font-size: 28px;
+  }
+  
+  .ticket-form {
+    gap: 28px;
+  }
+  
+  .form-input,
+  .form-textarea,
+  .form-select {
+    padding: 14px 18px;
   }
 }
 
@@ -433,11 +441,10 @@
   }
 }
 
-
 .form-input:focus-visible,
 .form-textarea:focus-visible,
 .form-select:focus-visible,
 .submit-button:focus-visible {
-  outline: 2px solid #000000;
+  outline: 2px solid rgba(255, 255, 255, 0.8);
   outline-offset: 2px;
 }
