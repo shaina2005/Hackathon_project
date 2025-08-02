@@ -1,15 +1,16 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom"; // ✅ Import Link
 
 function Navbar() {
   return (
     <nav
       className="navbar navbar-expand-lg navbar-dark bg-dark px-5 py-3"
-      style={{ fontFamily: "Segoe UI, sans-serif", fontSize: "1.1rem" , fontWeight:"500" }}
+      style={{ fontFamily: "Segoe UI, sans-serif", fontSize: "1.1rem", fontWeight: "500" }}
     >
-      <a className="navbar-brand text-white text-lg" href="#">
+      <Link className="navbar-brand text-white text-lg" to="/">
         AskPCTE
-      </a>
+      </Link>
 
       <button
         className="navbar-toggler"
@@ -23,30 +24,27 @@ function Navbar() {
         <span className="navbar-toggler-icon"></span>
       </button>
 
-      <div
-        className="collapse navbar-collapse justify-content-end"
-        id="navbarNav"
-      >
+      <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item mx-2">
-            <a className="nav-link text-white nav-link-underline" href="#">
+            <Link className="nav-link text-white nav-link-underline" to="/login">
               Login
-            </a>
+            </Link>
           </li>
           <li className="nav-item mx-2">
-            <a className="nav-link text-white nav-link-underline" href="#">
+            <Link className="nav-link text-white nav-link-underline" to="/dashboard">
               Dashboard
-            </a>
+            </Link>
           </li>
           <li className="nav-item mx-2">
-            <a className="nav-link text-white nav-link-underline" href="#">
-              Createticket
-            </a>
+            <Link className="nav-link text-white nav-link-underline" to="/createticket">
+              Create Ticket
+            </Link>
           </li>
           <li className="nav-item mx-2">
-            <a className="nav-link text-white nav-link-underline" href="#">
-              Ticketdetails
-            </a>
+            <Link className="nav-link text-white nav-link-underline" to="/ticketdetails">
+              Ticket Details
+            </Link>
           </li>
         </ul>
       </div>
