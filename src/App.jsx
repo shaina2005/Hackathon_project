@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Login from './Pages/Login'
 import Navbar from './Components/Navbar';
+import CreateTicket from './Pages/createticket';
 
 import Dashboard from './Pages/Dashboard'
 import { BrowserRouter , Routes , Route } from 'react-router-dom'
@@ -14,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/create-ticket" element={<CreateTicket />} />
+        <Route path="/create-ticket" element={<CreateTicket/>} />
       </Routes>
     </BrowserRouter>
 
