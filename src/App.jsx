@@ -1,10 +1,11 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./Components/Navbar";
-import Login from "./Pages/Login";
-import CreateTicket from "./Pages/createticket";
-import Dashboard from "./Pages/Dashboard";
-import "./App.css";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './Components/Navbar';
+import CreateTicket from './Pages/createticket';
+
+import Dashboard from './Pages/Dashboard'
+import { BrowserRouter , Routes , Route } from 'react-router-dom'
+import './App.css'
 
 function App() {
   return (
