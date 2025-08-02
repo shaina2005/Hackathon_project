@@ -1,6 +1,7 @@
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import '../App.css'
+
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -11,13 +12,22 @@ function Login() {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
-        email,
-        password,
+      const res = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
       });
 
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("role", res.data.role); // optional
+      if (!res.ok) {
+        throw new Error("Login failed");
+      }
+
+      const data = await res.json();
+
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("role", data.role); // optional
       navigate("/dashboard");
     } catch (error) {
       alert("Login failed. Check email or password.");
@@ -25,33 +35,37 @@ function Login() {
   };
 
   return (
-    <div className="container mt-5" style={{ maxWidth: "400px" }}>
-      <h3 className="mb-4 text-center">Login</h3>
-      <form onSubmit={handleLogin}>
-        <div className="mb-3">
-          <input
-            type="email"
-            className="form-control"
-            placeholder="Enter email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
+    <div className="login-page">
+      <div className="login-card">
+        <h3 className="login-title">Login to AskPCTE</h3>
+        <form onSubmit={handleLogin}>
+          <div className="form-group mb-3">
+            <label>Email</label>
+            <input
+              type="email"
+              className="form-control"
+              placeholder="Enter email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
 
-        <div className="mb-3">
-          <input
-            type="password"
-            className="form-control"
-            placeholder="Enter password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
+          <div className="form-group mb-4">
+            <label>Password</label>
+            <input
+              type="password"
+              className="form-control"
+              placeholder="Enter password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
 
-        <button className="btn btn-primary w-100">Login</button>
-      </form>
+          <button className="btn btn-block w-100">Login</button>
+        </form>
+      </div>
     </div>
   );
 }
