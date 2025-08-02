@@ -1,3 +1,6 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
 .login-page {
   height: 100vh;
   display: flex;
@@ -13,6 +16,7 @@
   border: 1px solid #e0e0e0; 
   width: 100%;
   max-width: 400px;
+  margin-top: -100px;
 }
 
 .login-title {
@@ -47,7 +51,9 @@
 }
 
 .login-card .btn:hover {
-  background-color: #333;
+  background-color: #242323;
+  color: rgb(250, 249, 249);
+
 }
 .nav-link-underline {
   position: relative;
@@ -68,4 +74,50 @@
 
 .nav-link-underline:hover::after {
   width: 100%;
+}
+
+/* dashboard css  */
+
+.dashboard-container {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.dashboard-heading {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.stats-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.stat-card p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
 }
