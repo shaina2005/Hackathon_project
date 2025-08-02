@@ -1,6 +1,10 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+<<<<<<< HEAD
 import { Link } from "react-router-dom"; 
+=======
+import { Link } from "react-router-dom"; // ✅ Import Link
+>>>>>>> 149345f (done)
 
 function Navbar() {
   return (
