@@ -63,7 +63,7 @@ function Login() {
             />
           </div>
 
-          <button className="btn btn-block w-100">Login</button>
+          <button className="btn">Login</button>
         </form>
       </div>
     </div>
