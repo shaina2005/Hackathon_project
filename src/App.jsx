@@ -14,12 +14,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
-<<<<<<< HEAD
+
         <Route path="/create-ticket" element={<CreateTicket/>} />
-=======
-        {/* <Route path="/createticket" element={<CreateTicket />} />
-        <Route path="/ticketdetails" element={<TicketDetails />} /> */}
->>>>>>> 3f6978c420b83dcf2d5d6915b8f10ee3fa52236a
+        <Route path="/ticket-details" element={<TicketDetails />} />
+        <Route path="/createticket" element={<CreateTicket />} />
+        <Route path="/ticketdetails" element={<TicketDetails />} />
+
       </Routes>
     </BrowserRouter>
   );
