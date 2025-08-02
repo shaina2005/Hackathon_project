@@ -14,8 +14,11 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/create-ticket" element={<CreateTicket />} />
-       
+
+        <Route path="/create-ticket" element={<CreateTicket/>} />
+        <Route path="/ticket-details" element={<TicketDetails />} />
+        <Route path="/createticket" element={<CreateTicket />} />
+        <Route path="/ticketdetails" element={<TicketDetails />} />
 
       </Routes>
     </BrowserRouter>
